@@ -1,0 +1,19 @@
+{% extends 'base/main.html' %}
+{% block content  %}
+
+<!-- ... existing code ... -->
+
+{% if task_status_form.visible %}
+<form method="POST" style="margin-top: 20px;">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ task_status_form.status.label_tag }}
+        {{ task_status_form.status }}
+    </div>
+    <input class="button" type="submit" value='Update Status'>
+</form>
+{% endif %}
+
+<!-- ... existing code ... -->
+
+{% endblock content %}
